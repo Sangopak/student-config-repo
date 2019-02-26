@@ -6,9 +6,9 @@
 
 /target
 
-# 
 
-IDEs and editors
+
+# IDEs and editors
 
 /.idea
 
@@ -18,3 +18,7 @@ IDEs and editors
 
 .settings
 
+
+
+# node
+node_modules

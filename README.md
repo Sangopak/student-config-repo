@@ -1,2 +1,2 @@
 # student-config-repo
-student-config-repository
+This is config repository for Student Microservices both consumer and producers would be using it

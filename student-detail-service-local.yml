@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: student-detail-service-local
+  profiles:
+    active: local  
+  data:
+    cassandra:
+      contact-points:
+      - 192.168.99.100
+      keyspace-name: student_keyspace
+      port: 9042
+server:
+  servlet:
+    context-path: /v1
+  port: 8080
+ 

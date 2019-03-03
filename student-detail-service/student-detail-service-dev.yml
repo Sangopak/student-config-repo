@@ -5,8 +5,7 @@ spring:
     active: dev  
   data:
     cassandra:
-      contact-points:
-      - 192.168.99.100
+      contact-points: 192.168.99.100
       keyspace-name: student_keyspace_dev
       port: 9042
 server:

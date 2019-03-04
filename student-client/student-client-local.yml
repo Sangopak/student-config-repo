@@ -16,6 +16,6 @@ spring:
     username: sa
     password: 
     driver-class-name: org.h2.Driver    
-student-client-local:
+student-detail-service:
   ribbon:
     listOfServers: http://localhost:8080,http://localhost:8081    

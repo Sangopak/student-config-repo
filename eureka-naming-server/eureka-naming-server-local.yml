@@ -1,6 +1,6 @@
 spring:
   application:
-    name: eureka-naming-server
+    name: eureka-naming-server-local   
 eureka:
   client:
     register-with-eureka: false

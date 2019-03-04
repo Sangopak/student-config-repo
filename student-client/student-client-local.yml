@@ -20,6 +20,7 @@ eureka:
   client:
     service-url:
       default-zone: http://localhost:8761/eureka/     
-student-detail-service:
-  ribbon:
-    listOfServers: http://localhost:8080,http://localhost:8081    
+# Commenting the below section so that Ribbon can talk to Eureka
+#student-detail-service:
+#  ribbon:
+#    listOfServers: http://localhost:8080,http://localhost:8081    

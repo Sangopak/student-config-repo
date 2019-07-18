@@ -1,6 +1,6 @@
 spring:
   application:
-    name: student-detail-service-local
+    name: student-detail-service
   profiles:
     active: local  
   data:

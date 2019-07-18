@@ -1,6 +1,6 @@
 spring:
   application:
-    name: student-detail-service-dev
+    name: student-detail-service
   profiles:
     active: dev  
   data:

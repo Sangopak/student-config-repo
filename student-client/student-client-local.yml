@@ -1,6 +1,6 @@
 spring:
   application:
-    name: student-client-local
+    name: student-client
   profiles:
     active: local
   h2:

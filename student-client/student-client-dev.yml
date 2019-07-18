@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: student-client
+  profiles:
+    active: local
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true  
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver   
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/     
+# Commenting the below section so that Ribbon can talk to Eureka
+#student-detail-service:
+#  ribbon:
+#    listOfServers: http://localhost:8080,http://localhost:8081
+server:
+  port: 8090

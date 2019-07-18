@@ -23,4 +23,6 @@ eureka:
 # Commenting the below section so that Ribbon can talk to Eureka
 #student-detail-service:
 #  ribbon:
-#    listOfServers: http://localhost:8080,http://localhost:8081    
+#    listOfServers: http://localhost:8080,http://localhost:8081
+server:
+  port: 8090

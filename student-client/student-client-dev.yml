@@ -2,7 +2,7 @@ spring:
   application:
     name: student-client
   profiles:
-    active: local
+    active: dev
   h2:
     console:
       enabled: true
@@ -10,19 +10,42 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-    show-sql: true  
+    show-sql: true
   datasource:
     url: jdbc:h2:mem:test
     username: sa
-    password: 
-    driver-class-name: org.h2.Driver   
+    password:
+    driver-class-name: org.h2.Driver
+  security:
+    basic:
+      enabled: false
+    oauth2:
+      enabled: true
+      client:
+        client-id: studentClientIdPassword
+        client-secret: secret
+        access-token-uri: http://localhost:9090/spring-security-oauth-server/oauth/token
+        #user-authorization-uri: http://localhost:9090/spring-security-oauth-server/oauth/authorize
+        scope: read write
+      resource:
+        user-info-uri: http://localhost:9090/spring-security-oauth-server/oauth/userinfo
 eureka:
   client:
     service-url:
-      default-zone: http://localhost:8761/eureka/     
+      default-zone: http://localhost:8761/eureka/
 # Commenting the below section so that Ribbon can talk to Eureka
 #student-detail-service:
 #  ribbon:
 #    listOfServers: http://localhost:8080,http://localhost:8081
 server:
   port: 8090
+feign:
+  hystrix:
+    enabled: true
+org:
+  springframework:
+    boot:
+      autoconfigure:
+        EnableAutoConfiguration: com.sango.microservices.client.config.ClientCredentialsConfiguration
+hystrix:
+  sharedSecurityContext: true

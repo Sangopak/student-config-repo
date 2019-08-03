@@ -15,7 +15,20 @@ spring:
     url: jdbc:h2:mem:test
     username: sa
     password: 
-    driver-class-name: org.h2.Driver   
+    driver-class-name: org.h2.Driver
+  security:
+    basic:
+      enabled: false
+    oauth2:
+      enabled: true
+      client:
+        client-id: studentClientIdPassword
+        client-secret: secret
+        access-token-uri: http://localhost:9090/spring-security-oauth-server/oauth/token
+        #user-authorization-uri: http://localhost:9090/spring-security-oauth-server/oauth/authorize
+        scope: read write
+      resource:
+        user-info-uri: http://localhost:9090/spring-security-oauth-server/oauth/userinfo
 eureka:
   client:
     service-url:
@@ -29,3 +42,10 @@ server:
 feign:
   hystrix:
     enabled: true
+org:
+  springframework:
+    boot:
+      autoconfigure:
+        EnableAutoConfiguration: com.sango.microservices.client.config.ClientCredentialsConfiguration
+hystrix:
+  sharedSecurityContext: true

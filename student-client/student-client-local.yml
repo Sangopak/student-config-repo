@@ -49,3 +49,13 @@ org:
         EnableAutoConfiguration: com.sango.microservices.client.config.ClientCredentialsConfiguration
 hystrix:
   sharedSecurityContext: true
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+      circuitBreaker:
+        enabled: true
+        sleepWindowInMilliseconds: 10000
+        errorThresholdPercentage: 60

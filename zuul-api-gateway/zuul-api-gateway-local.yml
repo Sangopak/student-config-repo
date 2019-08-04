@@ -11,5 +11,5 @@ zuul:
   prefix: /zuul
   routes:
     student-client:
-      path: /v1/client/**
+      path: /student-client/**
       serviceId: student-client

@@ -10,5 +10,6 @@ server:
 zuul:
   routes:
     student:
-      path: /student/**
-      serviceId: student-client
+      url: localhost:8090/v1/client/
+#      path: /student/**
+#      serviceId: student-client

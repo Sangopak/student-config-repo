@@ -8,6 +8,15 @@ spring:
       contact-points: 127.0.0.1
       keyspace-name: student_keyspace
       port: 9042
+  security:
+    basic:
+      enabled: false
+    oauth2:
+      enabled: true
+      client:
+        client-id: studentProtectedResourceClientIdPassword
+        client-secret: secret
+        check-token-endpoint-url: http://localhost:9090/spring-security-oauth-server/oauth/check_token
 eureka:
   client:
     service-url:

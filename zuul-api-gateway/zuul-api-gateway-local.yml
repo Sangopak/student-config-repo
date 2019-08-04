@@ -5,9 +5,11 @@ eureka:
   client:
     service-url:
       default-zone: http://localhost:8761/eureka/
-    fetch-registry: true
-    register-with-eureka: true
-  instance:
-    prefer-ip-address: true
 server:
   port: 8762
+zuul:
+  prefix: /zuul
+  routes:
+    student-client:
+      path: /v1/client/**
+      serviceId: student-client
